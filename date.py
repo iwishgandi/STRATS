@@ -10,21 +10,6 @@ from datetime import datetime
 from dateutil import tz
 from dateutil import parser
 
-class CanadaTradingCalendar(AbstractHolidayCalendar):
-    rules = [
-        Holiday('New Years Day', month=1, day=1, observance=nearest_workday),
-        Holiday('Family Day', month=2, day=1, offset=pd.DateOffset(weekday=MO(3))),
-		GoodFriday,
-        Holiday('Victoria Day', month=5, day=25, offset=pd.DateOffset(weekday=MO(-1))),
-		Holiday('Canada Day', month=7, day=1,observance=next_workday),
-        Holiday('Civic Holiday', month=8, day=1, offset=pd.DateOffset(weekday=MO(1))),
-        Holiday('Labour Day', month=9, day=1, offset=pd.DateOffset(weekday=MO(1))),		
-		Holiday('Thanksgiving Day', month=10, day=9, observance=nearest_workday),		
-        Holiday('Remembrance Day', month=11, day=11, observance=next_workday),	
-        Holiday('Christmas', month=12, day=25, observance=nearest_workday),
-		Holiday('Boxing Day', month=12, day=25, observance=after_nearest_workday)
-    ]
-
 try:
 	init
 except NameError:
